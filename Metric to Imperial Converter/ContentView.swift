@@ -9,13 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                Section("Physical Quantity") {
+                    NavigationLink(destination: LengthSwiftUIView()) {
+                        Text("Length")
+                    }
+                    .foregroundColor(.teal)
+                    
+                    NavigationLink(destination: MassSwiftUIView()) {
+                        Text("Mass")
+                    }
+                    .foregroundColor(.indigo)
+                    
+                    NavigationLink(destination: CapacitySwiftUIView()) {
+                        Text("Capacity")
+                    }
+                    .foregroundColor(.blue)
+                }
+            }
+            .navigationTitle("Measurements")
         }
-        .padding()
     }
 }
 
